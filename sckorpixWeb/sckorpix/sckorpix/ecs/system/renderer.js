@@ -6,7 +6,7 @@ class Renderer {
         this.uid = 0;
         this.cameraEntity;
         this.entityList = [];
-        this.clearColor = vec3.fromValues(0.1, 0.1, 0.1);
+        this.clearColor = vec3.fromValues(0.14, 0.11, 0.26);
     }
 
     setCamera(cameraEntity) {

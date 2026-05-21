@@ -42,6 +42,21 @@ class MaterialBook {
         basicBlueMaterial.setColor(0.0,0.0,1.0);
         this.defaultMaterials.set("basicBlue",basicBlueMaterial);
 
+        let basicYellowMaterial = new Material("basicYellow");
+        basicYellowMaterial.setShader(shaderBook.getShader("basic3D"));
+        basicYellowMaterial.setColor(1.0,1.0,0.0);
+        this.defaultMaterials.set("basicYellow",basicYellowMaterial);
+
+        let basicMagentaMaterial = new Material("basicMagenta");
+        basicMagentaMaterial.setShader(shaderBook.getShader("basic3D"));
+        basicMagentaMaterial.setColor(1.0,0.0,1.0);
+        this.defaultMaterials.set("basicMagenta",basicMagentaMaterial);
+
+        let basicCyanMaterial = new Material("basicCyan");
+        basicCyanMaterial.setShader(shaderBook.getShader("basic3D"));
+        basicCyanMaterial.setColor(0.0,1.0,1.0);
+        this.defaultMaterials.set("basicCyan",basicCyanMaterial);
+
         let basicWhiteMaterial = new Material("basicWhite");
         basicWhiteMaterial.setShader(shaderBook.getShader("basic3D"));
         basicWhiteMaterial.setColor(1.0,1.0,1.0);
@@ -49,7 +64,7 @@ class MaterialBook {
 
         let basicGreyMaterial = new Material("basicGrey");
         basicGreyMaterial.setShader(shaderBook.getShader("basic3D"));
-        basicGreyMaterial.setColor(0.2,0.2,0.2);
+        basicGreyMaterial.setColor(0.5, 0.8, 0.8);
         this.defaultMaterials.set("basicGrey",basicGreyMaterial);
 
         //Multi-Color Materials

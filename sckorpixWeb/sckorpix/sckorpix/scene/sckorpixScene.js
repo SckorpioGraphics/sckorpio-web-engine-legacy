@@ -33,6 +33,27 @@ class SckorpixScene {
         //visibility
         this.isGridVisible = true;
         this.isAxisVisible = true;
+
+        //mode
+        this.mode = 1;
+        // moon1: (58.0/255.0, 168.0/255.0, 193.0/255.0)
+        // electriczblue: (125.0/255.0, 249.0/255.0, 255.0/255.0)
+        // robin egg: (0.0/255.0, 204.0/255.0, 204.0/255.0)
+        
+
+        // Light
+        // (90.0/255.0, 170.0/255.0, 180.0/255.0);
+        // GRID: (0.5, 0.8, 0.8);
+
+        // Dark
+        // (80.0/255.0, 160.0/255.0, 170.0/255.0);
+        // GRID: (0.5, 0.8, 0.8);
+
+        this.lightModeClearColor = vec3.fromValues(80.0/255.0, 160.0/255.0, 170.0/255.0);
+        this.lightModeGridColor = vec3.fromValues(0.5, 0.8, 0.8);
+
+        this.darkModeClearColor = vec3.fromValues(0.14, 0.11, 0.26);
+        this.darkModeGridColor = vec3.fromValues(0.45, 0.40, 0.65);
     }
 
     async init(){
@@ -46,6 +67,7 @@ class SckorpixScene {
         */
         this.camera = new Camera();
         this.renderer.setCamera(this.camera);
+        this.renderer.setClearColor(this.lightModeClearColor);
 
         /*
         SHADER_BOOK
@@ -85,8 +107,23 @@ class SckorpixScene {
           } else if (event.key === "Y" || event.key === "y") {
             this.isAxisVisible = !this.isAxisVisible;
             this.setAxisVisibility(this.isAxisVisible);
+          } else if(event.key === "M" || event.key === "m") {
+            this.toggleMode();
           }
         });
+    }
+
+    toggleMode() {
+        if(this.mode == 1){
+            this.mode = 0;
+            this.renderer.setClearColor(this.darkModeClearColor);
+            this.grid.setColor(this.darkModeGridColor[0], this.darkModeGridColor[1], this.darkModeGridColor[2]);
+        } else {
+            this.mode = 1;
+            this.renderer.setClearColor(this.lightModeClearColor);
+            this.grid.setColor(this.lightModeGridColor[0], this.lightModeGridColor[1], this.lightModeGridColor[2]);
+        }
+
     }
 
     createDefaultEntities(){
