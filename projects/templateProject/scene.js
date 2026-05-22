@@ -1,6 +1,6 @@
-import { SckorpixScene } from "../../sckorpioWebEngine/core/scene/sckorpixScene.js";
+import { SckorpioWebScene } from "../../sckorpioWebEngine/core/scene/sckorpioWebScene.js";
 
-class Scene extends SckorpixScene {
+class Scene extends SckorpioWebScene {
     constructor() {
         super();
     }

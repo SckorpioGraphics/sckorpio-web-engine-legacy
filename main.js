@@ -2,7 +2,7 @@ import { verifyWebGLSupport } from "./sckorpioWebEngine/core/canvas/utils.js";
 import { title } from "./sckorpioWebEngine/core/canvas/title.js";
 import { Scene } from "./projects/sckorpioTesting/scene.js";
 
-var initSckorpix = async function () {
+var initSckorpioWebEngine = async function () {
     //Verify WebGL Support
     verifyWebGLSupport();
 
@@ -15,4 +15,4 @@ var initSckorpix = async function () {
     scene.play();
 }
 
-initSckorpix();
+initSckorpioWebEngine();

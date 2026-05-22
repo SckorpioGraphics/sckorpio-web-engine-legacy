@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sckorpix Web</title>
+    <title>SckorpioWebEngine(Legacy)</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.4.0/gl-matrix.js"></script>
 
     <style>
@@ -15,14 +15,14 @@
         }
 
         /* Make sure both canvases are stacked on top of each other */
-        #sckorpix-webgl-surface {
+        #sckorpioWebEngine-webgl-surface {
             position: absolute;
             top: 0;
             left: 0;
         }
 
         /* 2D Canvas Styling with neon green background and red border */
-        #sckorpix-2d-title-surface {
+        #sckorpioWebEngine-2d-title-surface {
             position: absolute;
             top: 10px; 
             left: 10px; 
@@ -34,7 +34,7 @@
         }
 
         /* 2D Canvas Styling with neon green background and red border */
-        #sckorpix-2d-logger-surface {
+        #sckorpioWebEngine-2d-logger-surface {
             position: absolute;
             right: 10px; 
             top: 10px; 
@@ -50,17 +50,17 @@
 <body>
     <h1>SckorPix</h1>
     <!-- Canvas element for WebGL rendering -->
-    <canvas id="sckorpix-webgl-surface">
+    <canvas id="sckorpioWebEngine-webgl-surface">
         Your browser does not support HTML5
     </canvas>
 
     <!-- Canvas element for 2D text rendering -->
-    <canvas id="sckorpix-2d-title-surface">
+    <canvas id="sckorpioWebEngine-2d-title-surface">
         Your browser does not support the HTML5 canvas element.
     </canvas>
 
     <!-- Canvas element for 2D text rendering -->
-    <canvas id="sckorpix-2d-logger-surface">
+    <canvas id="sckorpioWebEngine-2d-logger-surface">
         Your browser does not support the HTML5 canvas element.
     </canvas>
     

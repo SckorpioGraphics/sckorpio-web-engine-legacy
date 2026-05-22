@@ -23,7 +23,7 @@ export function getWebGLResourceID() {
 }
 
 export function getWebGLContext() {
-  var canvas = document.getElementById("sckorpix-webgl-surface");
+  var canvas = document.getElementById("sckorpioWebEngine-webgl-surface");
   var gl = canvas.getContext("webgl2");
   return gl;
 }
@@ -31,22 +31,22 @@ export function getWebGLContext() {
 export let gl = getWebGLContext();
 
 export function getWebGLCanvas() {
-  var canvas = document.getElementById("sckorpix-webgl-surface");
+  var canvas = document.getElementById("sckorpioWebEngine-webgl-surface");
   return canvas;
 }
 
 export function getWebGLCanvasWidth() {
-  var canvas = document.getElementById("sckorpix-webgl-surface");
+  var canvas = document.getElementById("sckorpioWebEngine-webgl-surface");
   return canvas.width;
 }
 
 export function getWebGLCanvasHeight() {
-  var canvas = document.getElementById("sckorpix-webgl-surface");
+  var canvas = document.getElementById("sckorpioWebEngine-webgl-surface");
   return canvas.height;
 }
 
 export function getWebGLCanvasRatio() {
-  var canvas = document.getElementById("sckorpix-webgl-surface");
+  var canvas = document.getElementById("sckorpioWebEngine-webgl-surface");
   return canvas.width / canvas.height;
 }
 
@@ -55,12 +55,12 @@ Title
 */
 
 export function getTitleCanvas() {
-  var canvas = document.getElementById("sckorpix-2d-title-surface");
+  var canvas = document.getElementById("sckorpioWebEngine-2d-title-surface");
   return canvas;
 }
 
 export function getTitleContext() {
-  var canvas = document.getElementById("sckorpix-2d-title-surface");
+  var canvas = document.getElementById("sckorpioWebEngine-2d-title-surface");
   if (!canvas) {
     console.error("Canvas element not found.");
     return null;
@@ -77,12 +77,12 @@ Logger
 */
 
 export function getLoggerCanvas() {
-  var canvas = document.getElementById("sckorpix-2d-logger-surface");
+  var canvas = document.getElementById("sckorpioWebEngine-2d-logger-surface");
   return canvas;
 }
 
 export function getLoggerContext() {
-  var canvas = document.getElementById("sckorpix-2d-logger-surface");
+  var canvas = document.getElementById("sckorpioWebEngine-2d-logger-surface");
   if (!canvas) {
     console.error("Canvas element not found.");
     return null;

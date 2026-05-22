@@ -2,9 +2,9 @@ import { Box } from "../../sckorpioWebEngine/core/ecs/entityList/shape/box.js";
 import { Cone } from "../../sckorpioWebEngine/core/ecs/entityList/shape/cone.js";
 import { Cyclinder } from "../../sckorpioWebEngine/core/ecs/entityList/shape/cyclinder.js";
 import { Sphere } from "../../sckorpioWebEngine/core/ecs/entityList/shape/sphere.js";
-import { SckorpixScene } from "../../sckorpioWebEngine/core/scene/sckorpixScene.js";
+import { SckorpioWebScene } from "../../sckorpioWebEngine/core/scene/sckorpioWebScene.js";
 
-class Scene extends SckorpixScene{
+class Scene extends SckorpioWebScene{
     constructor(projectName) {
         super();
         this.projectName = projectName;

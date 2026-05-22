@@ -1,8 +1,8 @@
-# Sckorpix WebGL Graphics Library
+# SckorpioWebEngine WebGL Graphics Library
 
 ## Overview
 
-**Sckorpix** is a WebGL 2.0-based 3D graphics library built with JavaScript. It provides a modern, component-based architecture for creating 3D scenes and rendering graphics in the browser. The library uses an Entity Component System (ECS) pattern, making it modular, extensible, and easy to use.
+**SckorpioWebEngine** is a WebGL 2.0-based 3D graphics library built with JavaScript. It provides a modern, component-based architecture for creating 3D scenes and rendering graphics in the browser. The library uses an Entity Component System (ECS) pattern, making it modular, extensible, and easy to use.
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@
 
 ## Architecture Overview
 
-Sckorpix follows a layered architecture:
+SckorpioWebEngine follows a layered architecture:
 
 ```
 ┌─────────────────────────────────────┐
@@ -31,7 +31,7 @@ Sckorpix follows a layered architecture:
               ↓
 ┌─────────────────────────────────────┐
 │         Scene Management            │
-│    (Scene, SckorpixScene classes)  │
+│    (Scene, SckorpioWebScene classes)  │
 └─────────────────────────────────────┘
               ↓
 ┌─────────────────────────────────────┐
@@ -54,7 +54,7 @@ Sckorpix follows a layered architecture:
 
 ## Core Systems
 
-### 1. Canvas Management (`sckorpix/canvas/`)
+### 1. Canvas Management (`sckorpioWebEngine/canvas/`)
 
 The canvas system manages multiple rendering surfaces:
 
@@ -63,12 +63,12 @@ The canvas system manages multiple rendering surfaces:
 - **Canvas Utilities**: Functions to get canvas dimensions, aspect ratio, and WebGL context
 - **Resource ID Generation**: Unique ID generation for WebGL resources
 - **Multi-Canvas Support**: Manages three canvas elements:
-  - `sckorpix-webgl-surface`: Main WebGL rendering canvas
-  - `sckorpix-2d-title-surface`: 2D canvas for title display
-  - `sckorpix-2d-logger-surface`: 2D canvas for FPS/performance logging
+  - `sckorpioWebEngine-webgl-surface`: Main WebGL rendering canvas
+  - `sckorpioWebEngine-2d-title-surface`: 2D canvas for title display
+  - `sckorpioWebEngine-2d-logger-surface`: 2D canvas for FPS/performance logging
 
 #### **title.js**
-- **Title Display System**: Renders the "Sckorpix" title on a 2D overlay canvas
+- **Title Display System**: Renders the "SckorpioWebEngine" title on a 2D overlay canvas
 - **Multiple Styles**: Supports different title rendering styles (text-only, icon-based)
 - **Visual Effects**: Includes shadow effects and color gradients
 
@@ -82,7 +82,7 @@ The canvas system manages multiple rendering surfaces:
 
 ## Entity Component System (ECS)
 
-Sckorpix uses an ECS architecture where:
+SckorpioWebEngine uses an ECS architecture where:
 - **Entities**: Game objects (Camera, Box, Sphere, Grid, etc.)
 - **Components**: Data containers (Transform, Mesh, Render, Camera)
 - **Systems**: Logic processors (Renderer)
@@ -220,7 +220,7 @@ Main rendering system:
 #### **TextureBook** (`textureBook.js`)
 - **Singleton Pattern**: Single instance manages all textures
 - **Default Textures**: Pre-loads common textures:
-  - `sckorpixTexture`, `grass`, `woodCarton`, `brick`
+  - `sckorpioWebTexture`, `grass`, `woodCarton`, `brick`
 - **Custom Textures**: Supports project-specific textures
 - **Path Management**: Handles default and custom texture paths
 
@@ -228,7 +228,7 @@ Main rendering system:
 
 ## Resource Management
 
-Sckorpix uses a **Book Pattern** for resource management:
+SckorpioWebEngine uses a **Book Pattern** for resource management:
 
 1. **ShaderBook**: Centralized shader management
 2. **MaterialBook**: Centralized material management
@@ -254,13 +254,13 @@ Base scene class that provides:
 - **Render Loop**: Implements the main rendering loop using `requestAnimationFrame`
 - **Event Listeners**: Keyboard shortcuts for grid/axis visibility
 
-### SckorpixScene (`scene/sckorpixScene.js`)
+### SckorpioWebScene (`scene/sckorpioWebScene.js`)
 
 Extended scene class with additional features (similar to Scene but with different method names for material setting).
 
 ### Project Scenes (`projects/*/scene.js`)
 
-User-defined scenes that extend `SckorpixScene`:
+User-defined scenes that extend `SckorpioWebScene`:
 - **Custom Resource Loading**: Loads project-specific textures
 - **Scene Creation**: Defines custom entities and their arrangements
 - **Project Organization**: Each project has its own directory with resources
@@ -270,10 +270,10 @@ User-defined scenes that extend `SckorpixScene`:
 ## Project Structure
 
 ```
-sckorpix/
+sckorpioWebEngine/
 ├── index.html                 # Main HTML entry point
 ├── main.js                    # Application entry point
-├── sckorpix/                  # Core library code
+├── sckorpioWebEngine/                  # Core library code
 │   ├── canvas/               # Canvas and utility systems
 │   ├── ecs/                  # Entity Component System
 │   │   ├── component/        # Base component class
@@ -305,14 +305,14 @@ sckorpix/
 
 1. **HTML Setup**: Include the WebGL canvas in your HTML:
 ```html
-<canvas id="sckorpix-webgl-surface"></canvas>
+<canvas id="sckorpioWebEngine-webgl-surface"></canvas>
 ```
 
-2. **Initialize Sckorpix**:
+2. **Initialize SckorpioWebEngine**:
 ```javascript
 import { Scene } from "./projects/myProject/scene.js";
 
-var initSckorpix = async function () {
+var initSckorpioWebEngine = async function () {
     var scene = new Scene("myProject"); 
     await scene.init(); 
     await scene.initResources();
@@ -321,14 +321,14 @@ var initSckorpix = async function () {
     scene.play();
 }
 
-initSckorpix();
+initSckorpioWebEngine();
 ```
 
 ### Creating Entities
 
 #### Box
 ```javascript
-import { Box } from "../../sckorpix/ecs/entityList/shape/box.js";
+import { Box } from "../../sckorpioWebEngine/ecs/entityList/shape/box.js";
 
 // Basic box
 let box = new Box({ mode: 'basic' });
@@ -347,7 +347,7 @@ texturedBox.setTexture("woodCarton");
 
 #### Sphere
 ```javascript
-import { Sphere } from "../../sckorpix/ecs/entityList/shape/sphere.js";
+import { Sphere } from "../../sckorpioWebEngine/ecs/entityList/shape/sphere.js";
 
 let sphere = new Sphere(0.5, 36, 36); // radius, latitudeBands, longitudeBands
 sphere.setPosition(vec3.fromValues(-2.0, 0.5, 0.0));
@@ -356,7 +356,7 @@ sphere.setColor(0, 1, 1); // Cyan
 
 #### Grid
 ```javascript
-import { Grid } from "../../sckorpix/ecs/entityList/shape/grid.js";
+import { Grid } from "../../sckorpioWebEngine/ecs/entityList/shape/grid.js";
 
 let grid = new Grid(100, 1.0); // gridCount, gridGap
 grid.setMaterial("basicGrey");
@@ -518,7 +518,7 @@ Potential areas for expansion:
 
 ## Author
 
-Sckorpix Graphics Library
+SckorpioWebEngine Graphics Library
 
 ---
 
