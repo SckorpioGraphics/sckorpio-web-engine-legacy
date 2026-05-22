@@ -1,7 +1,7 @@
-import { VertexArray } from "../../webgl/buffer/vertexArray.js";
-import { VertexBuffer } from "../../webgl/buffer/vertexBuffer.js";
-import { IndexBuffer } from "../../webgl/buffer/indexBuffer.js";
-import { VertexBufferLayout } from "../../webgl/buffer/vertexBufferLayout.js";
+import { VertexArray } from "../../../renderer/webgl/buffer/vertexArray.js";
+import { VertexBuffer } from "../../../renderer/webgl/buffer/vertexBuffer.js";
+import { IndexBuffer } from "../../../renderer/webgl/buffer/indexBuffer.js";
+import { VertexBufferLayout } from "../../../renderer/webgl/buffer/vertexBufferLayout.js";
 import { gl } from "../../canvas/utils.js";
 
 class RenderComponent{

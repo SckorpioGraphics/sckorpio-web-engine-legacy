@@ -1,8 +1,8 @@
 import { Entity } from "../../entity/entity.js";
 import { TransformComponent } from "../../componentList/transformComponent.js";
 import { MeshComponent } from "../../componentList/meshComponent.js";
-import { MaterialBook } from "../../../webgl/material/materialBook.js";
-import { TextureBook } from "../../../webgl/texture/textureBook.js";
+import { MaterialBook } from "../../../../renderer/webgl/material/materialBook.js";
+import { TextureBook } from "../../../../renderer/webgl/texture/textureBook.js";
 
 class Shape extends Entity{
     constructor(){

@@ -1,6 +1,6 @@
-import { Box } from "../../sckorpix/ecs/entityList/shape/box.js";
-import { Sphere } from "../../sckorpix/ecs/entityList/shape/sphere.js";
-import { SckorpixScene } from "../../sckorpix/scene/sckorpixScene.js";
+import { Box } from "../../sckorpioWebEngine/core/ecs/entityList/shape/box.js";
+import { Sphere } from "../../sckorpioWebEngine/core/ecs/entityList/shape/sphere.js";
+import { SckorpixScene } from "../../sckorpioWebEngine/core/scene/sckorpixScene.js";
 
 class Scene extends SckorpixScene{
     constructor(projectName) {

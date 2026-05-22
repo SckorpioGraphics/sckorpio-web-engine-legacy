@@ -2,9 +2,9 @@ import { Box } from "../ecs/entityList/shape/box.js";
 import { Camera } from "../ecs/entityList/camera/camera.js";
 import { Grid } from "../ecs/entityList/shape/grid.js";
 import { Renderer } from "../ecs/system/renderer.js";
-import { ShaderBook } from "../webgl/shader/shaderBook.js";
-import { MaterialBook } from "../webgl/material/materialBook.js";
-import { TextureBook } from "../webgl/texture/textureBook.js";
+import { ShaderBook } from "../../renderer/webgl/shader/shaderBook.js";
+import { MaterialBook } from "../../renderer/webgl/material/materialBook.js";
+import { TextureBook } from "../../renderer/webgl/texture/textureBook.js";
 
 class SckorpixScene {
     constructor(){

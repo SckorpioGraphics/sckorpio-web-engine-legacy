@@ -1,4 +1,4 @@
-import { gl } from "../../canvas/utils.js";
+import { gl } from "../../../core/canvas/utils.js";
 
 class VertexBufferElement {
     constructor(type, count, normalized, attribLocation) {  
